@@ -32,6 +32,11 @@ p {
     line-height: 24px;
 }
 
+
+input {
+    border-radius: 10px;
+}
+
 .navbar-vertical {
     display: block;
     background: var(--background-color);
@@ -75,11 +80,19 @@ p {
 }
 
 .navbar-horizontal {
-    position: absolute;
     background: var(--white-color);
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+    margin-top: -970px;
+    
     width: 1680px;
     height: 64px;
 }
+
+.navbar-horizontal ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 56px;
+
+}
+
