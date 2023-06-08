@@ -1,0 +1,85 @@
+:root {
+    --background-color: #091336;
+    --body-color: #E5E5E5;
+    --text-color: #ffffff99;
+    --btn-blue-color: #005FF8;
+    --white-color: #FFFFFF;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+body {
+    background: var(--body-color);
+}
+
+li {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+}
+
+p {
+    color: var(--text-color);
+    font-family: "SF Pro Display";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+}
+
+.navbar-vertical {
+    display: block;
+    background: var(--background-color);
+    width: 240px;
+    height: 964px;
+}
+
+.navbar-vertical-list {
+    margin-top: 32px;
+    margin-left: 13px;
+}
+
+.navbar-vertical-list li p {
+    margin-left: 13px;
+}
+
+.navbar-vertical-list__item {
+    margin-top: 32px;
+}
+
+.navbar-logo {
+    margin-left: 12px;
+    margin-top: 20px;
+}
+
+.navbar-icon {
+    width: 25px;
+    height: 20px;
+}
+
+.btn {
+    width: 200px;
+    height: 52px;
+    border-radius: 4px;
+}
+
+.btn-blue {
+    background: var(--btn-blue-color);
+    color: var(--white-color);
+    border-color: var(--btn-blue-color);
+}
+
+.navbar-horizontal {
+    position: absolute;
+    background: var(--white-color);
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 1680px;
+    height: 64px;
+}
