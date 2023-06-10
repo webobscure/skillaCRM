@@ -170,3 +170,11 @@ input {
     background: var(--red-color);
     border-radius: 12px 0px 0px 12px;
 }
+
+.container {
+    margin-left: 240px;
+    width: 1200px;
+    height: 2730px;
+    z-index: 2;
+    background: #F1F4F9;
+}
