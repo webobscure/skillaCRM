@@ -1,9 +1,14 @@
 :root {
     --background-color: #091336;
-    --body-color: #E5E5E5;
+    --body-color: #e5e5e5;
     --text-color: #ffffff99;
-    --btn-blue-color: #005FF8;
-    --white-color: #FFFFFF;
+    --btn-blue-color: #005ff8;
+    --white-color: #ffffff;
+    --green-color: #28a879;
+    --yellow-color: #ffd500;
+    --red-color: #ea1a4f;
+    --grayText-color: #899cb1;
+    --backgroundBox-color: #dee6f5;
 }
 
 * {
@@ -13,7 +18,7 @@
 }
 
 body {
-    background: var(--body-color);
+    background: var(--white-color);
 }
 
 li {
@@ -31,7 +36,6 @@ p {
     font-size: 16px;
     line-height: 24px;
 }
-
 
 input {
     border-radius: 10px;
@@ -80,19 +84,89 @@ input {
 }
 
 .navbar-horizontal {
-    background: var(--white-color);
     margin-top: -970px;
-    
-    width: 1680px;
+    margin-left: 240px;
+    width: 1400px;
     height: 64px;
+    box-shadow: 0px 4px 5px #e9edf3;
 }
 
 .navbar-horizontal ul {
     display: flex;
     flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    gap: 56px;
-
+    padding-top: 10px;
+    gap: 36px;
 }
 
+.date {
+    margin-left: 37px;
+    color: var(--grayText-color);
+}
+
+.user {
+    color: var(--grayText-color);
+}
+
+.statistic {
+    font-family: "SF Pro Display";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 148%;
+    margin-left: 5px;
+}
+
+.arrow-icon {
+    margin-left: 10px;
+}
+
+.calls {
+    color: var(--green-color);
+}
+
+.talks {
+    color: var(--yellow-color);
+}
+
+.conversion {
+    color: var(--red-color);
+}
+
+.box {
+    position: absolute;
+    width: 156px;
+    height: 6px;
+    background: var(--backgroundBox-color);
+    border-radius: 12px;
+    top: 40px;
+}
+
+.item-title {
+    font-family: "SF Pro Display";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 148%;
+    color: #122945;
+}
+
+.green-box {
+    width: 68px;
+    height: 6px;
+    background: var(--green-color);
+    border-radius: 12px 0px 0px 12px;
+}
+
+.yellow-box {
+    width: 68px;
+    height: 6px;
+    background: var(--yellow-color);
+    border-radius: 12px 0px 0px 12px;
+}
+
+.red-box {
+    width: 68px;
+    height: 6px;
+    background: var(--red-color);
+    border-radius: 12px 0px 0px 12px;
+}

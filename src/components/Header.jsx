@@ -12,6 +12,7 @@ import {
   phone,
   search,
   fake,
+  arrow,
 } from '../assets';
 
 const Header = () => {
@@ -72,24 +73,44 @@ const Header = () => {
       </nav>
       <nav className="navbar-horizontal">
         <ul className="navbar-horizontal-list">
-            <li className="horizontal-list__item">
-                <p>Среда, 13 окт</p>
-            </li>
-            <li className="horizontal-list__item">Новые звонки</li>
-            <li className="horizontal-list__item">Качество разговоров</li>
-            <li className="horizontal-list__item">Конверсия в заказе</li>
-            <li className="horizontal-list__item">
-                <input type="text" />
-            </li>
-            <li className="horizontal-list__item">
-                <img src={search} alt="" />
-            </li>
-            <li className="horizontal-list__item">
-                <p>ИП Сидорова Александра Михайловна</p>
-            </li>
-            <li className="horizontal-list__item">
-                <img src={fake} alt="" />
-            </li>
+          <li className="navbar-horizontal-list__item">
+            <p className="date">Среда, 13 окт</p>
+          </li>
+          <li className="navbar-horizontal-list__item">
+            <h5 className="item-title">Новые звонки</h5>
+            <p className="statistic calls">20 из 30 шт</p>
+            <div className="box">
+              <div className="green-box"></div>
+            </div>
+          </li>
+          <li className="navbar-horizontal-list__item">
+            <h5 className="item-title">Качество разговоров</h5>
+            <p className="statistic talks">40%</p>
+            <div className="box">
+              <div className="yellow-box"></div>
+            </div>
+          </li>
+          <li className="navbar-horizontal-list__item">
+            <h5 className="item-title">Конверсия в заказе</h5>
+            <p className="statistic conversion">67%</p>
+            <div className="box">
+              <div className="red-box"></div>
+            </div>
+          </li>
+          <li className="navbar-horizontal-list__item">
+            <input type="text" style={{ display: 'none' }} />
+          </li>
+          <li className="navbar-horizontal-list__item">
+            <img src={search} alt="" />
+          </li>
+          <li className="navbar-horizontal-list__item">
+            <p className="user">ИП Сидорова Александра Михайловна</p>
+            <img src={arrow} alt="arrow" className="arrow-icon" />
+          </li>
+          <li className="navbar-horizontal-list__item">
+            <img src={fake} alt="" />
+            <img src={arrow} alt="arrow" className="arrow-icon" />
+          </li>
         </ul>
       </nav>
     </>
