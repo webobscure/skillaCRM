@@ -1,20 +1,32 @@
-const Home = () => {
-  function checkServer() {
-    let order = fetch('https://api.skilla.ru/testapi', {
-      method: 'POST',
-      headers: {
-        'Authentication': 'Bearer testtoken',
-        'Acess-Control-Allow-Headers': 'API-Key,Content-Type,If-Modified-Since,Cache-Control',
-      },
-    });
+import { useEffect, useState } from 'react';
+import { search } from '../assets';
 
-    console.log(order);
-  }
+const Home = () => {
+  const [data, setData] = useState({});
+  useEffect( () => {
+    async function fetchList() {
+      const response = await fetch('https://api.skilla.ru/mango/getList?23.12.2020', {
+        method: 'POST',
+        headers: { Authorization: 'Bearer testtoken' },
+      })
+        .then((res) => res.json())
+        .then((json) => JSON.stringify(json));
+        return response
+    }
+
+    console.log();
+  }, [data]);
 
   return (
     <>
       <div className="container">
-        <button onClick={checkServer}>Test</button>
+        <section className="table-section">
+            <div className="controls">
+                <img src={search} alt="" />
+                <input type="text" placeholder="Поисп по звонкам" />
+            </div>
+            <table className="table-container"></table>
+        </section>
       </div>
     </>
   );
