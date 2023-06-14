@@ -9,6 +9,7 @@
   --red-color: #ea1a4f;
   --grayText-color: #899cb1;
   --backgroundBox-color: #dee6f5;
+  --text-secondary: #5e7793;
 }
 
 * {
@@ -39,6 +40,14 @@ p {
 
 input {
   border-radius: 10px;
+}
+
+th {
+  font-family: "SF Pro Display";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 100%;
 }
 
 .navbar-vertical {
@@ -175,7 +184,48 @@ input {
   margin-left: 240px;
   width: 1200px;
   height: 2730px;
-  background: #F1F4F9;
+  background: #f1f4f9;
+}
+
+.controls {
+  display: flex;
+  width: 1040px;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.controls-icon {
+  width: 16px;
+  height: 16px;
+  position: absolute;
+  top: 195px;
+}
+
+.controls-input {
+  background: none;
+  border: none;
+  margin-bottom: 5px;
+  padding-left: 20px;
+}
+
+.controls-arrow {
+  margin-left: 8px;
+}
+
+.controls-input ::-moz-placeholder {
+  color: var(--text-secondary);
+}
+
+.controls-input ::placeholder {
+  color: var(--text-secondary);
+}
+
+.controls-button {
+  background: none;
+  border: none;
+  color: var(--text-secondary);
+  cursor: pointer;
+  margin-right: 36px;
 }
 
 .table-section {
@@ -188,4 +238,12 @@ input {
   height: 1985px;
   border-radius: 8px;
   background: var(--white-color);
+}
+
+thead th {
+  cursor: pointer;
+}
+
+th a {
+  color: var(--grayText-color);
 }/*# sourceMappingURL=App.css.map */
