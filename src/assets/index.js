@@ -12,3 +12,7 @@ export { default as agents } from './agents.svg';
 export { default as search } from './search.svg';
 export { default as fake } from './fake.png';
 export { default as arrow } from './arrow.svg';
+export { default as accept } from './accept.svg';
+export { default as decline } from './decline.svg';
+export { default as progress } from './progress.svg';
+export { default as woman } from './woman.svg';

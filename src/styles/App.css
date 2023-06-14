@@ -40,6 +40,8 @@ p {
 
 input {
   border-radius: 10px;
+  width: 250px;
+  height: 20px;
 }
 
 th {
@@ -192,6 +194,7 @@ th {
   width: 1040px;
   flex-direction: row;
   justify-content: space-between;
+  margin-bottom: 10px;
 }
 
 .controls-icon {
@@ -240,10 +243,62 @@ th {
   background: var(--white-color);
 }
 
-thead th {
+th a {
+  color: var(--grayText-color);
   cursor: pointer;
 }
 
-th a {
-  color: var(--grayText-color);
+.type {
+  margin-left: 46px;
+}
+
+.time {
+  padding-left: 30px;
+}
+
+.phone {
+  padding-left: 60px;
+}
+
+.worker {
+  padding-left: 30px;
+}
+
+.source {
+  padding-left: 200px;
+}
+
+.rate {
+  padding-left: 140px;
+}
+
+.distance {
+  padding-left: 120px;
+}
+
+#thead {
+  display: inline-block;
+  margin-top: 26px;
+  margin-left: 40px;
+}
+
+#tbody {
+  display: inline-block;
+  margin-left: 46px;
+}
+
+th, td {
+  text-align: left;
+}
+@media (min-width: 480px) {
+  th, td {
+    display: table-cell;
+    padding: 0.25em 0.5em;
+  }
+  th:first-child, td:first-child {
+    padding-left: 0;
+  }
+  th:last-child, td:last-child {
+    padding-right: 0;
+  }
 }/*# sourceMappingURL=App.css.map */

@@ -12,6 +12,8 @@
     --text-secondary: #5e7793;
 }
 
+$breakpoint-alpha: 480px;
+
 * {
     margin: 0;
     padding: 0;
@@ -40,6 +42,8 @@ p {
 
 input {
     border-radius: 10px;
+    width: 250px;
+    height: 20px;
 }
 
 th {
@@ -49,6 +53,8 @@ th {
     font-size: 14px;
     line-height: 100%;
 }
+
+
 
 .navbar-vertical {
     display: block;
@@ -194,6 +200,7 @@ th {
     width: 1040px;
     flex-direction: row;
     justify-content: space-between;
+    margin-bottom: 10px;
 }
 
 .controls-icon {
@@ -238,10 +245,67 @@ th {
     background: var(--white-color);
 }
 
-thead th {
-    cursor: pointer;
-}
 
 th a {
     color: var(--grayText-color);
+    cursor: pointer;
 }
+
+.type {
+    margin-left: 46px;
+}
+
+.time {
+    padding-left: 30px;
+}
+
+.phone {
+    padding-left: 60px;
+
+}
+
+.worker {
+    padding-left: 30px;
+}
+
+.source {
+    padding-left: 200px;
+}
+
+.rate {
+    padding-left: 140px;
+}
+
+.distance {
+    padding-left: 120px;
+}
+
+
+#thead {
+    display: inline-block;
+    margin-top: 26px;
+    margin-left: 40px;
+}
+
+#tbody {
+    display: inline-block;
+    margin-left: 46px;
+}
+
+th, td {
+    text-align: left;
+
+    @media(min-width: $breakpoint-alpha) {
+        display: table-cell;
+        padding: .25em .5em;
+
+        &:first-child {
+            padding-left: 0;
+        }
+
+        &:last-child {
+            padding-right: 0;
+        }
+    }
+}
+

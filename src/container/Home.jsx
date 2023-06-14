@@ -1,17 +1,13 @@
-//import { useEffect } from 'react';
-import { arrow, search } from '../assets';
+import { useEffect } from 'react';
 
-const Home = () => {
- // useEffect(() => {
- //     const response =  fetch('https://api.skilla.ru/mango/getList?23.12.2020', {
- //       method: 'POST',
- //       headers: { Authorization: 'Bearer testtoken' },
- //     })
- //       .then((res) => res.json())
- //       .then((json) => JSON.stringify(json));
- //     return response;
- // }, []);
- 
+import fetchList from '../utils/fetchList'
+import { arrow, progress, search, woman } from '../assets';
+
+const Home = (id) => {
+  useEffect(() => {
+    fetchList()
+   }, [id]);
+
   return (
     <>
       <div className="container">
@@ -19,53 +15,85 @@ const Home = () => {
           <div className="controls">
             <div className="controls-left">
               <img src={search} alt="search" className="controls-icon" />
-              <input type="text" placeholder="Поисп по звонкам"  className="controls-input"/>
+              <input type="text" placeholder="Поисп по звонкам" className="controls-input" />
             </div>
             <div className="controls-right">
-              <button className="controls-button">Все типы
-              <img src={arrow} alt="arrow" className="controls-arrow"/>
+              <button className="controls-button">
+                Все типы
+                <img src={arrow} alt="arrow" className="controls-arrow" />
               </button>
-              <button className="controls-button">Все сотрудники
-              <img src={arrow} alt="arrow" className="controls-arrow"/>
+              <button className="controls-button">
+                Все сотрудники
+                <img src={arrow} alt="arrow" className="controls-arrow" />
               </button>
-              <button className="controls-button">Все звонки
-              <img src={arrow} alt="arrow" className="controls-arrow"/>
+              <button className="controls-button">
+                Все звонки
+                <img src={arrow} alt="arrow" className="controls-arrow" />
               </button>
-              <button className="controls-button">Все источники
-              <img src={arrow} alt="arrow" className="controls-arrow"/>
+              <button className="controls-button">
+                Все источники
+                <img src={arrow} alt="arrow" className="controls-arrow" />
               </button>
-              <button className="controls-button">Все оценки
-              <img src={arrow} alt="arrow" className="controls-arrow"/>
+              <button className="controls-button">
+                Все оценки
+                <img src={arrow} alt="arrow" className="controls-arrow" />
               </button>
-              <button className="controls-button" style={{"marginRight": "0px"}}>Все ошибки
-              <img src={arrow} alt="arrow" className="controls-arrow"/>
+              <button className="controls-button" style={{ marginRight: '0px' }}>
+                Все ошибки
+                <img src={arrow} alt="arrow" className="controls-arrow" />
               </button>
             </div>
           </div>
           <table className="table-container">
             <thead id="thead">
-                <row>
-                    <th><a >Тип</a></th>
-                    <th><a >Время</a></th>
-                    <th><a >Сотрудник</a></th>
-                    <th><a >Звонок</a></th>
-                    <th><a >Источник</a></th>
-                    <th><a >Оценка</a></th>
-                    <th><a >Длительность</a></th>
-                </row>
+              <tr>
+                <th className="">
+                  <a>Тип</a>
+                </th>
+                <th className="time">
+                  <a>Время</a>
+                </th>
+                <th className="worker">
+                  <a>Сотрудник</a>
+                </th>
+                <th className="phone">
+                  <a>Звонок</a>
+                </th>
+                <th className="source">
+                  <a>Источник</a>
+                </th>
+                <th className="rate">
+                  <a>Оценка</a>
+                </th>
+                <th className="distance">
+                  <a>Длительность</a>
+                </th>
+              </tr>
             </thead>
             <tbody id="tbody">
-                <td data-th="Тип">
-                    <img src="" alt="img" />
+              <tr>
+                <td className="type" data-th="Тип">
+                  <img src={progress} alt="img" />
                 </td>
-                <td data-th="Время">19:00</td>
-                <td data-th="Сотрудник">
-                    <img src="" alt="ava" />
+                <td className="time" data-th="Время">
+                  19:00
                 </td>
-                <td data-th="Звонок">+7 (987) 567-17-12</td>
-                <td data-th="Источник">Rabota.ru</td>
-                <td data-th="Оценка">Отлично</td>
-                <td data-th="Длительность">12:06</td>
+                <td className="worker" data-th="Сотрудник" style={{"paddingLeft": "45px"}}>
+                  <img src={woman} alt="ava" />
+                </td>
+                <td className="phone" data-th="Звонок" style={{"paddingLeft": "80px"}}>
+                  +7 (987) 567-17-12
+                </td>
+                <td className="source" data-th="Источник" style={{"paddingLeft": "115px"}}>
+                  Rabota.ru
+                </td>
+                <td className="rate" data-th="Оценка" style={{"paddingLeft": "132px"}}>
+                  Отлично
+                </td>
+                <td className="distance" data-th="Длительность" style={{"paddingLeft" : "150px"}}>
+                  12:06
+                </td>
+              </tr>
             </tbody>
           </table>
         </section>
