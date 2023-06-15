@@ -194,7 +194,6 @@ th {
 }
 
 // Table section
-
 .controls {
     display: flex;
     width: 1040px;
@@ -280,6 +279,25 @@ th a {
     padding-left: 120px;
 }
 
+.tbody-worker {
+    margin-left: 45px;
+}
+
+.tbody-phone {
+    margin-left: 80px;
+}
+
+.tbody-source {
+    margin-left: 115px;
+}
+
+.tbody-rate {
+    margin-left: 132px;
+}
+
+.tbody-distance {
+    margin-left: 150px;
+}
 
 #thead {
     display: inline-block;

@@ -1,12 +1,57 @@
 import { useEffect } from 'react';
 
-import fetchList from '../utils/fetchList'
-import { arrow, progress, search, woman } from '../assets';
+import { arrow, progress, search } from '../assets';
 
 const Home = (id) => {
-  useEffect(() => {
-    fetchList()
-   }, [id]);
+  function getTime(date) {
+    let time = new Date(date)
+
+    return `${time.getHours()}:${time.getMinutes() < 10 ? '0' + time.getMinutes() : time.getMinutes()}`
+  }
+
+ useEffect(() => {
+   fetch("https://api.skilla.ru/mango/getList", {
+    method: 'POST',
+    headers: {
+      Authorization: 'Bearer testtoken'
+    }
+   })
+   .then((res) => {
+    return res.json()
+   })
+   .then(data => {
+    console.log(data.results);
+    data.results.forEach((user) => {
+      const markup = `<tr id=${user.person_id}>
+      <td className="type" data-th="Тип">
+        <img src=${progress} alt="img" />
+      </td>
+      <td className="time" data-th="Время">
+        ${getTime(user.date)}
+      </td>
+      <td className="tbody-worker" data-th="Сотрудник" >
+        <img src=${user.person_avatar} alt="avatar" />
+      </td>
+      <td className="tbody-phone" data-th="Звонок" >
+        +${user.partner_data.phone}
+      </td>
+      <td className="tbody-source" data-th="Источник" >
+        ${user.partner_data.name}
+      </td>
+      <td className="tbody-rate" data-th="Оценка" >
+        ${user.status}
+      </td>
+      <td className="tbody-distance" data-th="Длительность" >
+        ${user.time}
+      </td>
+    </tr>`
+
+      document.getElementById('tbody').insertAdjacentHTML('beforeend', markup)
+    })
+  })
+   .catch(error => console.log(error))
+ }, [id])
+ 
 
   return (
     <>
@@ -71,29 +116,8 @@ const Home = (id) => {
               </tr>
             </thead>
             <tbody id="tbody">
-              <tr>
-                <td className="type" data-th="Тип">
-                  <img src={progress} alt="img" />
-                </td>
-                <td className="time" data-th="Время">
-                  19:00
-                </td>
-                <td className="worker" data-th="Сотрудник" style={{"paddingLeft": "45px"}}>
-                  <img src={woman} alt="ava" />
-                </td>
-                <td className="phone" data-th="Звонок" style={{"paddingLeft": "80px"}}>
-                  +7 (987) 567-17-12
-                </td>
-                <td className="source" data-th="Источник" style={{"paddingLeft": "115px"}}>
-                  Rabota.ru
-                </td>
-                <td className="rate" data-th="Оценка" style={{"paddingLeft": "132px"}}>
-                  Отлично
-                </td>
-                <td className="distance" data-th="Длительность" style={{"paddingLeft" : "150px"}}>
-                  12:06
-                </td>
-              </tr>
+              
+              
             </tbody>
           </table>
         </section>
