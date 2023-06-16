@@ -16,3 +16,5 @@ export { default as accept } from './accept.svg';
 export { default as decline } from './decline.svg';
 export { default as progress } from './progress.svg';
 export { default as woman } from './woman.svg';
+export { default as back } from './back.svg';
+export { default as calendar } from './calendar.svg';

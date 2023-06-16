@@ -37,7 +37,7 @@ const Header = () => {
           </li>
           <li className="navbar-vertical-list__item">
             <img src={phone} alt="" className="navbar-icon" />
-            <p>Звонки</p>
+            <p style={{'color' : '#FFFFFF'}}>Звонки</p>
           </li>
           <li className="navbar-vertical-list__item">
             <img src={agents} alt="" className="navbar-icon" />
